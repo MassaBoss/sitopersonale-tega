@@ -824,3 +824,42 @@ section {
     outline: 2px solid var(--gold);
     outline-offset: 4px;
 }
+/* ============================================
+   FIX SVG SIZING — protezione globale
+   Le SVG senza dimensioni esplicite occupano
+   tutto lo spazio disponibile. Limitiamole.
+   ============================================ */
+
+/* SVG dentro le card: l'icona principale */
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* SVG dentro i bottoni e link */
+.btn svg,
+.card-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.card-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Protezione globale: nessuna SVG esce mai dal suo contenitore */
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Eccezione: le SVG con dimensioni esplicite del genitore mantengono quelle */
+.card-icon,
+.btn .btn-icon,
+.btn svg,
+.card-link svg {
+    flex-shrink: 0;
+}
