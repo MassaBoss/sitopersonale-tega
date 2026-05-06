@@ -121,7 +121,7 @@
 
             const subject = encodeURIComponent(`Nuovo progetto da ${name}`);
             const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`);
-            const mailto = `mailto:mattia.massalongo@gmail.com?subject=${subject}&body=${body}`;
+            const mailto = `mailto:massalongomattia@gmail.com?subject=${subject}&body=${body}`;
 
             showFeedback('Apertura del client email…', 'success');
             setTimeout(() => {
